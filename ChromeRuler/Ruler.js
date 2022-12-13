@@ -1,11 +1,4 @@
-//Adding events
-document.body.style.cursor = "crosshair";
-
-let clicked = false;
-let x = 0,
-  y = 0;
-
-function CreateDisplayNodes(name, position) {
+const CreateDisplayNodes = (name, position) => {
   var node = document.createElement("div");
   var nodestyle = boxcss + position;
   node.setAttribute("style", nodestyle);
@@ -19,27 +12,10 @@ function CreateDisplayNodes(name, position) {
   node.appendChild(textnode);
 
   document.body.appendChild(node);
-}
-
-let boxcss =
-  "background-color:#21262d !important;position:fixed !important;width:240px !important;height:35px !important;border-radius:2em !important;z-index:10000000000000 !important;display:block !important;";
-let labelcss =
-  "left: 5%;top: 12%;position: relative !important; color: white; font-size: 20px !important;font-family: monospace !important;z-index:10000000000000 !important;display:block !important;";
-CreateDisplayNodes("Top", "top:0px;left:40%;");
-CreateDisplayNodes("Bottom", "bottom:0px;left:40%;");
-CreateDisplayNodes("Left", "left:0px;top:40%;");
-CreateDisplayNodes("Right", "right:0px;top:40%;");
-CreateDisplayNodes(
-  "Width",
-  "right:0px;top:10px;background-color:#21262d !important;"
-);
-CreateDisplayNodes(
-  "Height",
-  "right:0px;top:50px;background-color:#21262d !important;"
-);
+};
 
 //clearing lines
-function clearLines() {
+const clearLines = () => {
   if (document.getElementById("ChromeRulerhorizontal1"))
     document.getElementById("ChromeRulerhorizontal1").remove();
 
@@ -54,10 +30,10 @@ function clearLines() {
 
   if (document.getElementById("ChromeRulerSelectionRectangle"))
     document.getElementById("ChromeRulerSelectionRectangle").remove();
-}
+};
 
 //drawing lines
-function createLineElement(x, y, length, angle, id) {
+const createLineElement = (x, y, length, angle, id) => {
   let line = document.createElement("div");
   line.setAttribute("id", "ChromeRuler" + id);
 
@@ -88,9 +64,9 @@ function createLineElement(x, y, length, angle, id) {
     "px; ";
   line.setAttribute("style", styles);
   return line;
-}
+};
 
-function createLine(x1, y1, x2, y2, id) {
+const createLine = (x1, y1, x2, y2, id) => {
   let a = x1 - x2,
     b = y1 - y2,
     c = Math.sqrt(a * a + b * b);
@@ -104,9 +80,9 @@ function createLine(x1, y1, x2, y2, id) {
   let alpha = Math.PI - Math.atan2(-b, a);
 
   return createLineElement(x, y, c, alpha, id);
-}
+};
 
-function DrawRectangle(x1, y1, x2, y2) {
+const DrawRectangle = (x1, y1, x2, y2) => {
   let rec = document.createElement("div");
   rec.setAttribute("id", "ChromeRulerSelectionRectangle");
   let style =
@@ -126,9 +102,9 @@ function DrawRectangle(x1, y1, x2, y2) {
     "background-color:#00a9e0";
   rec.setAttribute("style", style);
   document.body.appendChild(rec);
-}
+};
 
-function UpdateSpecs(x1, y1, x2, y2) {
+const UpdateSpecs = (x1, y1, x2, y2) => {
   document.getElementById("ChromeRulerTop").innerHTML = "Top : " + y1 + " px";
   document.getElementById("ChromeRulerBottom").innerHTML =
     "Bottom :  " + Math.abs(document.body.clientHeight - y2) + " px";
@@ -139,9 +115,9 @@ function UpdateSpecs(x1, y1, x2, y2) {
     "Width : " + Math.abs(x2 - x1) + " px";
   document.getElementById("ChromeRulerHeight").innerHTML =
     "Height : " + Math.abs(y2 - y1) + " px";
-}
+};
 
-function Mousedownfunction(e) {
+const Mousedownfunction = (e) => {
   clicked = true;
   x = e.pageX;
   y = e.pageY;
@@ -165,13 +141,13 @@ function Mousedownfunction(e) {
       "horizontal1"
     )
   );
-}
+};
 
-function Mouseupfunction(e) {
+const Mouseupfunction = (e) => {
   clicked = false;
-}
+};
 
-function Mousemovefunction(e) {
+const Mousemovefunction = (e) => {
   if (clicked == true) {
     //dragging
     clearLines();
@@ -220,8 +196,34 @@ function Mousemovefunction(e) {
 
     DrawRectangle(x, y, x2, y2);
   }
-}
+};
 
-document.addEventListener("mousedown", Mousedownfunction);
-document.addEventListener("mouseup", Mouseupfunction);
-document.addEventListener("mousemove", Mousemovefunction);
+//Adding events
+(() => {
+  document.body.style.cursor = "crosshair";
+
+  let clicked = false;
+  let x = 0,
+    y = 0;
+
+  let boxcss =
+    "background-color:#21262d !important;position:fixed !important;width:240px !important;height:35px !important;border-radius:2em !important;z-index:10000000000000 !important;display:block !important;";
+  let labelcss =
+    "left: 5%;top: 12%;position: relative !important; color: white; font-size: 20px !important;font-family: monospace !important;z-index:10000000000000 !important;display:block !important;";
+  CreateDisplayNodes("Top", "top:0px;left:40%;");
+  CreateDisplayNodes("Bottom", "bottom:0px;left:40%;");
+  CreateDisplayNodes("Left", "left:0px;top:40%;");
+  CreateDisplayNodes("Right", "right:0px;top:40%;");
+  CreateDisplayNodes(
+    "Width",
+    "right:0px;top:10px;background-color:#21262d !important;"
+  );
+  CreateDisplayNodes(
+    "Height",
+    "right:0px;top:50px;background-color:#21262d !important;"
+  );
+
+  document.addEventListener("mousedown", Mousedownfunction);
+  document.addEventListener("mouseup", Mouseupfunction);
+  document.addEventListener("mousemove", Mousemovefunction);
+})();

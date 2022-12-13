@@ -15,5 +15,11 @@
     },
     "default_title": "Ruler",
     "name": "Chrome Ruler"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["Ruler.js"]
+    }
+  ]
 }
