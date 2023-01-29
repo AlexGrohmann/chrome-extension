@@ -5,7 +5,7 @@
     "scripts": {
         "chromify": "node chromify.js",
         "dev": "parcel src/index.html",
-        "build": "parcel build src/index.html  && yarn chromify"
+        "build": "webpack"
     },
     "dependencies": {
         "jquery": "^3.4.1",
