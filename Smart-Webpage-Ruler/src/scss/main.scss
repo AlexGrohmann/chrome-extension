@@ -1,13 +1,13 @@
 @import './variable.scss';
 
 .rb-zeplin-selected {
-    border: 1px solid $border-color !important;
-    outline: none !important;
+    outline: 1px solid $border-color !important;
+    // outline: none !important;
 }
 
 .rb-zeplin-focused {
-    border: 1px solid $border-color-active !important;
-    outline: none !important;
+    outline: 1px solid $border-color-active !important;
+    // outline: none !important;
 }
 
 .rb-zeplin-ruller {
@@ -98,7 +98,8 @@
     display: none;
 }
 
-.rb-zeplin-guide-distance, .rb-zeplin-ruler-label  {
+.rb-zeplin-guide-distance,
+.rb-zeplin-ruler-label {
     background-color: $white;
     box-shadow: 0 1px 1px 1px $dark;
     padding: 3px 5px;
@@ -117,4 +118,3 @@
         left: 20px;
     }
 }
-
