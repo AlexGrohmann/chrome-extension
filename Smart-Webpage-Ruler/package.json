@@ -1,5 +1,5 @@
 {
-    "name": "zeplin-ruler",
+    "name": "ruler",
     "version": "1.0.0",
     "main": "src/js/index.js",
     "type": "module",

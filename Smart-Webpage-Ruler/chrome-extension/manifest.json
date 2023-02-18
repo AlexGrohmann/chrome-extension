@@ -1,8 +1,8 @@
 {
-    "name": "Smart Page Ruler",
-    "short_name": "Page Ruler",
+    "name": "Page Ruler",
+    "short_name": "Ruler",
     "offline_enabled": true,
-    "version": "1.0.3",
+    "version": "1.1.0",
     "manifest_version": 2,
     "icons": {
         "16": "images/icons/chrome-16.png",
