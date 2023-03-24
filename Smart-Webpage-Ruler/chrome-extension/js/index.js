@@ -6496,7 +6496,7 @@
       let label = "";
       let fullHeightStyle = "";
       if (fullHeightDirection.includes(direction)) {
-        fullHeightStyle = `height:${(0, import_jquery.default)("body").height()}px`;
+        fullHeightStyle = `height:${document.body.scrollHeight}px`;
       }
       if (directionShouldHaveLabel.includes(direction)) {
         const measure = direction === "top" ? Math.round(width) : Math.round(height);

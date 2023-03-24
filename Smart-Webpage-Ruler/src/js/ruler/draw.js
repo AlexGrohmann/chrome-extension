@@ -7,7 +7,7 @@ export const drawRuller = (measures, {axis:{top,left},width, height}) => {
         let label = '';
         let fullHeightStyle = '';
         if(fullHeightDirection.includes(direction)) {
-            fullHeightStyle = `height:${$('body').height()}px`;
+            fullHeightStyle = `height:${document.body.scrollHeight}px`;
         }
 
         if (directionShouldHaveLabel.includes(direction)) {

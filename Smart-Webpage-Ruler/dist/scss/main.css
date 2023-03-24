@@ -1,0 +1,127 @@
+/* src/scss/main.scss */
+.rb-zeplin-selected {
+  outline: 1px solid #ee3c06 !important;
+}
+.rb-zeplin-focused {
+  outline: 1px solid #2196f3 !important;
+}
+.rb-zeplin-ruller {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  z-index: 100000000000;
+  display: block;
+  top: 0;
+  left: 0;
+}
+.rb-zeplin-ruller-left {
+  border-left: 1px dashed #ee3c06;
+  width: 1px;
+  height: 100%;
+  height: 500vh;
+}
+.rb-zeplin-ruller-right {
+  border-left: 1px dashed #ee3c06;
+  width: 1px;
+  height: 100%;
+  height: 500vh;
+}
+.rb-zeplin-ruller-top {
+  border-top: 1px dashed #ee3c06;
+  width: 100%;
+  height: 1px;
+}
+.rb-zeplin-ruller-bottom {
+  border-top: 1px dashed #ee3c06;
+  width: 100%;
+  height: 1px;
+}
+.rb-zeplin-distance-line {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 100000000000 !important;
+}
+.rb-zeplin-distance-line-vertical {
+  border-left: 1px solid #ee3c06;
+}
+.rb-zeplin-distance-line-vertical::before {
+  width: 0;
+  height: 0;
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -6px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #ee3c06;
+}
+.rb-zeplin-distance-line-vertical::after {
+  width: 0;
+  height: 0;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -6px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #ee3c06;
+}
+.rb-zeplin-distance-line-horizontal {
+  border-top: 1px solid #ee3c06;
+}
+.rb-zeplin-distance-line-horizontal::before {
+  width: 0;
+  height: 0;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #ee3c06;
+}
+.rb-zeplin-distance-line-horizontal::after {
+  width: 0;
+  height: 0;
+  display: block;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #ee3c06;
+}
+.rb-zeplin-no-arrow::after,
+.rb-zeplin-no-arrow::before {
+  display: none;
+}
+.rb-zeplin-guide-distance,
+.rb-zeplin-ruler-label {
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px 1px rgba(15, 15, 15, 0.4);
+  padding: 3px 5px;
+  border-radius: 2px;
+  color: #ee3c06;
+  font-weight: bold;
+  font-size: 12px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif !important;
+  position: absolute;
+}
+.rb-zeplin-guide-distance-vertical,
+.rb-zeplin-ruler-label-vertical {
+  top: 20px;
+  left: 20px;
+}
+.rb-zeplin-guide-distance-horizontal,
+.rb-zeplin-ruler-label-horizontal {
+  top: 20px;
+  left: 20px;
+}
