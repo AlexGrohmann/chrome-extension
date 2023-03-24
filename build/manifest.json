@@ -2,7 +2,7 @@
     "name": "Page Ruler",
     "short_name": "Ruler",
     "offline_enabled": true,
-    "version": "1.1.0",
+    "version": "1.2.0",
     "manifest_version": 2,
     "icons": {
         "16": "images/icons/chrome-16.png",
