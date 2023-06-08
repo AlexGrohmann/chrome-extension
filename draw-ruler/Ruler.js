@@ -4,16 +4,9 @@ document.addEventListener("mousedown", Mousedownfunction);
 document.addEventListener("mouseup", Mouseupfunction);
 document.addEventListener("mousemove", Mousemovefunction);
 
-let pageWidth = jQuery(document).width();
-let pageHeight = jQuery(document).height();
-
-let clicked = false;
-let x = 0,
-  y = 0;
-
-let boxcss =
+boxcss =
   "background-color:#2b574b !important;position:fixed !important;width:140px !important;height:35px !important;border-radius:2em !important;z-index:10000000000000 !important;display:block !important;";
-let labelcss =
+labelcss =
   "left: 5%;color: white !important;padding-top: 4px !important;top: 12%;position: relative !important; font-size: 20px !important;font-family: fantasy !important;z-index:10000000000000 !important;display:block !important;";
 CreateDisplayNodes("Top", "top:0px;left:40%;");
 CreateDisplayNodes("Bottom", "bottom:0px;left:40%;");
@@ -216,14 +209,14 @@ function CreateDisplayNodes(name, position) {
 }
 
 function UpdateSpecs(x1, y1, x2, y2) {
-  jQuery("#ChromeRulerTop").text("Top : " + y1 + " px");
-  jQuery("#ChromeRulerBottom").text(
-    "Bottom :  " + Math.abs(pageHeight - y2) + " px"
-  );
-  jQuery("#ChromeRulerLeft").text("Left : " + x1 + " px");
-  jQuery("#ChromeRulerRight").text(
-    "Right :  " + Math.abs(pageWidth - x2) + " px"
-  );
-  jQuery("#ChromeRulerWidth").text("Width : " + Math.abs(x2 - x1) + " px");
-  jQuery("#ChromeRulerHeight").text("Height : " + Math.abs(y2 - y1) + " px");
+  document.getElementById("ChromeRulerTop").innerHTML = "Top : " + y1 + " px";
+  document.getElementById("ChromeRulerBottom").innerHTML =
+    "Bottom :  " + Math.abs(pageHeight - y2) + " px";
+  document.getElementById("ChromeRulerLeft").innerHTML = "Left : " + x1 + " px";
+  document.getElementById("ChromeRulerRight").innerHTML =
+    "Right :  " + Math.abs(pageWidth - x2) + " px";
+  document.getElementById("ChromeRulerWidth").innerHTML =
+    "Width : " + Math.abs(x2 - x1) + " px";
+  document.getElementById("ChromeRulerHeight").innerHTML =
+    "Height : " + Math.abs(y2 - y1) + " px";
 }

@@ -1,33 +1,36 @@
+let pageWidth = window.innerWidth;
+let pageHeight = window.innerHeight;
 
-var Tabclicked= false;
-disableBrowserAction();
+let clicked = false;
 
-function disableBrowserAction(tabId){
- 
-    chrome.tabs.executeScript(tabId, { file: "jquery.js" }, function() {
-    chrome.tabs.executeScript(tabId, { file: "CloseRuler.js" });
-	});
+let x = 0,
+  y = 0;
+
+let boxcss = "";
+let labelcss = "";
+
+let tabClicked = false;
+
+function disableBrowserAction(tabId) {
+  chrome.tabs.executeScript(tabId, { file: "CloseRuler.js" });
 }
 
-function enableBrowserAction(tabId){
-    
-    chrome.tabs.executeScript(tabId, { file: "jquery.js" }, function() {
-    chrome.tabs.executeScript(tabId, { file: "Ruler.js" });
-	});
+function enableBrowserAction(tabId) {
+  chrome.tabs.executeScript(tabId, { file: "Ruler.js" });
 }
 
-function updateState(){
-    if(Tabclicked==false){
-        Tabclicked=true;
-        enableBrowserAction();
-    }else{
-        Tabclicked=false;
-        disableBrowserAction();
-    }
+function updateState(tabId) {
+  if (!tabClicked) {
+    tabClicked = true;
+    enableBrowserAction(tabId);
+  } else {
+    tabClicked = false;
+    disableBrowserAction(tabId);
+  }
 }
 
-//chrome.pageAction.onClicked.addListener(updateState);
-
-chrome.browserAction.onClicked.addListener(function(tabId) {
-	updateState(tabId);
-});
+if (chrome.browserAction) {
+  chrome.browserAction.onClicked.addListener((tab) => {
+    updateState(tab.id);
+  });
+}

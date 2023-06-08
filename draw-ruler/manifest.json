@@ -1,7 +1,7 @@
 {
   "name": "Ruler",
   "description": "Position a ruler on the webpage to measure elements in pixels",
-  "version": "0.0.0.4",
+  "version": "2.0.1",
     "manifest_version": 2,
   "permissions": [
     "activeTab"
@@ -20,7 +20,7 @@
   },
 
   "content_scripts": [ {
-    "js": [ "jquery.js"],
+    "js": [ "background.js"],
     "matches": [ "http://*/*", "https://*/*"]
   }]
 }
