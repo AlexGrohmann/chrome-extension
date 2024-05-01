@@ -5,9 +5,25 @@ document.addEventListener("mouseup", Mouseupfunction);
 document.addEventListener("mousemove", Mousemovefunction);
 
 boxcss =
-  "background-color:#2b574b !important;position:fixed !important;width:180px !important;height:35px !important;border-radius:2em !important;z-index:10000000000000 !important;display:block !important;";
+  "background-color:#2b574b !important;" +
+  "position:fixed !important;" +
+  "width:180px !important;" +
+  "height:35px !important;" +
+  "border-radius:2em !important;" +
+  "z-index:10000000000000 !important;" +
+  "display:block !important;";
+
 labelcss =
-  "left: 5%;color: white !important;padding-top: 4px !important;top: 12%;position: relative !important; font-size: 20px !important;font-family: arial !important;z-index:10000000000000 !important;display:block !important;";
+  "left: 5%;" +
+  "color: white !important;" +
+  "padding-top: 4px !important;" +
+  "top: 12%;" +
+  "position: relative !important; " +
+  "font-size: 20px !important;" +
+  "font-family: arial !important;" +
+  "z-index:10000000000000 !important;" +
+  "display:block !important;";
+
 CreateDisplayNodes("Top", "top:0px;left:40%;");
 CreateDisplayNodes("Bottom", "bottom:0px;left:40%;");
 CreateDisplayNodes("Left", "left:0px;top:40%;");
